@@ -1,0 +1,38 @@
+import discord
+import time
+from bot import *
+
+# la variabile intents contiene i permessi al bot
+intents = discord.Intents.default()
+# abilita il permesso a leggere i contenuti dei messaggi
+intents.message_content = True
+# crea un bot e passa gli indents
+client = discord.Client(intents=intents)
+
+@client.event
+async def on_ready():
+    print(f'Abbiamo fatto l\'accesso come {client.user}')
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+    if message.content.startswith('ciao'):
+        await message.channel.send("Ciao!")
+    elif message.content.startswith('arrivederci'):
+        await message.channel.send("\U0001f642")
+    elif message.content.startswith('dammi una password'):
+        await message.channel.send(gen_pass())
+    elif message.content.startswith('dammi un emoji'):
+        await message.channel.send(gen_emodji())
+    elif message.content.startswith('come stai'):
+        await message.channel.send(emotion())
+    
+    if message.content.startswith('vai bot ecologico!'):
+        await message.channel.send("Allora ti serviranno: 3 bottiglie e della colla fooooooooortissima")
+        await message.channel.send("Inizia tagliando a metà le bottiglie con l'aiuto di un adulto")
+        await message.channel.send("ultimo passo: incolla le parti ricavate fra di loro")
+        await message.channel.send("E ora il tuo portapenne è completoooooooooo")
+    
+
+client.run("MTI5MjA0MDE3MjI4MzYyNTUxMg.Gq4_vF.lCeRSmU42wOEt-6v4Ki00coCE5nVaGYX7bKVGQ")
