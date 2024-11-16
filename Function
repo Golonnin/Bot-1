@@ -1,0 +1,31 @@
+import random
+import time
+
+def gen_pass():
+    elements = "+-/*!&$#?=@<>"
+    password = ""
+
+    for i in range(10):
+        password += random.choice(elements)
+
+    return password
+
+def gen_emodji():
+    emodji = ["\U0001f600", "\U0001f642", "\U0001F606", "\U0001F923","\U0001F615","\U0001F47F","\U0001F611","\U0001F618"]
+    return random.choice(emodji)
+
+def emotion():
+    emotion = ["Bene","Male","Stanco","Sono pieno di energie","Sono impaurito","Ho sonno","Sono felice","Sono triste","Sono sorpreso"]
+    return random.choice(emotion)
+
+def stato_del_bot():
+    emozioni = ["Bene","Male","Mi sento stanco","Sono pieno di energie","Sono impaurito","Ho sonno","Sono felice","Sono triste","Sono sorpreso"]
+    return random.choice(emozioni)
+
+def bot_ecologico2():
+    return("ok")
+    return("ok")
+
+def bot_ecologico():
+    idee = ["potresti creare un portapenne con parti di bottiglie di plastica"]
+    return random.choice(idee)
